@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Social Media Forum</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <h1>Let's Talk!</h1>
+</head>
+
+<body>
+    <p>What do you want to talk about? Insert here:</p>
+<!-- created a text field  -->
+        <input type="text" id="myText" value="What's up?">    
+<!--With a button to post the text underneath-->
+            <button onclick="myFunction()">Post here</button>
+                <p id="example"></p>
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("myText").value;
+                        document.getElementById("example").innerHTML = x;
+                        }
+                </script>
+<!-- need to create a feed container for the input in a seperate container-->
+
+    <div id="buttonContainer">
+        <p>Have a picture? Post here:</p>
+        <button onclick="myFunction()">Click here to post to forum</button>
+    </div>
+
+
+
+    
+
+
+</body>
+</html>

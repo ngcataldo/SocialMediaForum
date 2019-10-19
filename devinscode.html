@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="text-center container">
+            <label>My Form</label>
+            <textarea class="form-control" id="my-input"></textarea>
+            <button class="btn btn-success" onclick="getData()">Submit</button>
+        </div>
+        <div id="output">
+
+        </div>
+    </body>
+    <script type="text/javascript">
+        var data = [];
+
+        var getData = function() {
+            var textAreaElement = document.getElementById("my-input");
+            //returns the html element (text area id)
+            var outputElement = document.getElementById("output");
+            //returns the output html element (div id)
+            
+            //Get the text area input
+            var content = textAreaElement.value;
+            //value is the input of the textAreaElement
+
+            if(content) {
+                //Store the data
+                data.push({text: content, date_sumbittied : Date()});
+                //data is the array
+                //data.push pushes content into the array
+                //{} creates the object, then pushes it into the array
+                var outputHtml = document.createElement("p");
+                //createElement creates a new HTML element
+                //so we are creating a new paragraph here
+                outputHtml.innerHTML = content;
+
+                outputElement.append(outputHtml);
+                //outputting the paragraph into the div
+                //Resest text area input
+                textAreaElement.value = "";
+                // the value of the input is an empty string --> this is how we clear the form
+                console.log(data);
+                // this runs everything into the array "data"
+            } else{
+                alert("No Content");
+                // this creates an alert to stop someone from leaving the text field blank
+            }
+        }
+    
+    </script>
+</html>
